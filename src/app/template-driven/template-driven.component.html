@@ -1,0 +1,45 @@
+<div class="container mt-5 ">
+    <div class="card " style="width:700px">
+        <div class="card-header text-center">
+            Form using template driven
+        </div>
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">  
+        <div class="card-body">
+                <div class="row">
+                 <label >Full Name</label>
+                 <div class="col mb-2">
+                    <input type="text" name="fullname" class="form-control " ngModel>
+                 </div>
+                 <label >Email</label>
+                 <div class="col mb-2" >
+                    <input type="email" name="email" class="form-control"ngModel required>
+                 </div>
+                 <label >Password</label>
+                 <div class="col mb-2"  >
+                    <input type="password" name="password" class="form-control" ngModel>
+                 </div>
+                 <label >Conform Password</label>
+                 <div class="col mb-2">
+                    <input type="password" name="Conform password" class="form-control" ngModel>
+                 </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" ngModel>
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    Agree with terms and condition
+                  </label>
+                </div>
+               
+                 <button type="submit" class="btn btn-primary" >Register</button>
+                </div>
+        </div>
+    </form>
+   </div>
+   
+</div>
+<br/>
+<h4 style="color:red">The Details you had entered is </h4>
+<div *ngIf="value=='show'" style="color:grey">
+   <h6>Fullname: {{myForm.form.controls['fullname'].value|json}}</h6>
+   <h6>Email: {{myForm.form.controls['email'].value|json}}</h6>
+   <h6>password: {{myForm.form.controls['password'].value|json}}</h6>
+</div>
